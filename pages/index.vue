@@ -5,7 +5,7 @@
         <div class="flex size-full max-w-6xl flex-col md:flex-row">
             <div class="flex size-full h-[36rem] flex-col items-center justify-center md:h-full md:items-start md:p-8">
                 <p
-                    class="inline-block gap-2 text-white text-center text-5xl font-bold text-transparent md:text-left md:text-6xl leading-7">
+                    class="inline-block gap-2 text-white text-center text-3xl font-bold text-transparent md:text-left md:text-6xl leading-7">
                     Greetings!
                     I'm Neel 👋🏻
                 </p>
@@ -20,15 +20,19 @@
                     Learning about new technology and building apps that find solutions to make life easier has always
                     been a
                     passion of mine.
+
+                    <span class="flex w-full flex-row py-6 justify-start md:justify-start">
+                        <AnimatedTooltip :items="people" class="w-6" />
+                    </span>
+
+
+                    <NuxtLink to="/contact">
+                        <Button class="mt-5">Contact Me</Button>
+                    </NuxtLink>
                 </p>
 
-                <span class="flex w-full flex-row justify-center py-6 md:justify-start">
-                    <AnimatedTooltip :items="people" class="w-6" />
-                </span>
 
-                <NuxtLink to="/contact">
-                    <Button class="mt-5">Contact Me</Button>
-                </NuxtLink>
+
             </div>
             <div class="relative flex flex-col items-center justify-center  md:max-w-96">
                 <div class="relative flex size-fit flex-col items-center justify-center rounded-full">
