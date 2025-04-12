@@ -6,12 +6,25 @@ const projects = await queryCollection("projects").order("title", "DESC").all();
 
 <template>
   <section class="md:px-[10vw] md:mt-32">
-    <h3 class="heading-text">Services</h3>
+    <h3 class="heading-text">Projects</h3>
     <ul
-      class="grid grid-cols-1 grid-rows-none gap-4 overflow-auto xl:grid-rows-1 lg:gap-4 md:grid-cols-3 md:grid-rows-3 text-white"
+      class="grid grid-cols-1 grid-rows-none gap-4 overflow-auto xl:grid-rows-1 md:grid-cols-3 md:grid-rows-3 text-black"
     >
       <li v-for="item in projects" :key="item.id" :class="cn(' list-none')">
-        <div
+        <DirectionAwareHover
+          :image-url="`/images/${item.image}`"
+          image-class="scale-100 hover:scale-110"
+        >
+          <div class="bg-black/40 p-2 rounded-sm backdrop-blur-sm">
+            <h4 class="text-2xl font-bold mb-1">
+              {{ item.title }}
+            </h4>
+
+            <ContentRenderer :value="item.meta" />
+          </div>
+        </DirectionAwareHover>
+
+        <!-- <div
           class="rounded-2.5xl relative h-full border p-2 md:rounded-3xl md:p-3"
         >
           <GlowingEffect
@@ -26,7 +39,6 @@ const projects = await queryCollection("projects").order("title", "DESC").all();
           >
             <div class="relative flex flex-1 flex-col justify-between gap-3">
               <div>
-                <!-- <Icon class="size-4 text-white" :name="item.icon"></Icon> -->
 
                 <NuxtImg
                   :src="`/images/${item.image}`"
@@ -48,7 +60,7 @@ const projects = await queryCollection("projects").order("title", "DESC").all();
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </li>
     </ul>
   </section>
