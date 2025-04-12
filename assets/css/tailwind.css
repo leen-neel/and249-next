@@ -89,6 +89,6 @@
 
 @layer components {
   .btn-cta {
-    @apply w-fit !bg-primary hover:!bg-primary/80 !rounded-full !font-bold !px-11 cursor-pointer min-h-10;
+    @apply w-fit !bg-primary hover:!bg-primary/80 !rounded-full !font-bold !px-11 cursor-pointer min-h-10 transition-colors delay-150;
   }
 }

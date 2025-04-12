@@ -1,7 +1,7 @@
 <template>
+  <Hero />
 
-    <Hero />
+  <Services />
 
-    <Services />
-
+  <Projects />
 </template>
